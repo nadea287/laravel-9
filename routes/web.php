@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\PostController;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    //3
+//    $result = Str::of('here')->append('i am');
+//    $result = str('here')->append('i am');
+//    dd($result);
+    //4
+//    throw new Exception('whoops');
+
+    //5
+//    return Blade::render('{{ $greeting }}, World', ['greeting' => 'Hello']);
+
     return view('welcome');
+});
+
+//1
+Route::controller(PostController::class)->group(function () {
+    Route::get('/posts', 'index');
+    Route::post('/posts', 'store');
+    Route::get('/posts/{post}', 'show');
 });
