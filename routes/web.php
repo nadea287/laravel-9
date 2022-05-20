@@ -36,3 +36,7 @@ Route::controller(PostController::class)->group(function () {
     Route::post('/posts', 'store');
     Route::get('/posts/{post}', 'show');
 });
+
+//6 -> turn on the scope bindings
+//Route::get('/users/{user}/posts/{post:id}', [PostController::class, 'show']);
+Route::get('/users/{user}/posts/{post}', [PostController::class, 'show'])->scopeBindings();

@@ -19,6 +19,8 @@ class Controller extends BaseController
      * 4. refreshed ignition error page
      * 5. render a blade string
      * 6. forced scoped bindings
+     * 7. new test coverage
+     * 8. scout (driving based solution for performing search on your models) database engine
      *
      *
      */
